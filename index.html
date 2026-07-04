@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Project Map — ZeusNightBolt</title>
+<meta name="description" content="Index of active projects: market intelligence, agentic workflows, and casino/gambling trainers." />
+<style>
+  :root {
+    --bg: #0a0b0d;
+    --bg-elev: #131417;
+    --border: #23262b;
+    --text: #e8e9ea;
+    --text-dim: #9a9da3;
+    --accent: #e8b64c;
+    --accent-soft: rgba(232, 182, 76, 0.12);
+    --link: #7fb0ff;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f7f7f8;
+      --bg-elev: #ffffff;
+      --border: #e3e4e7;
+      --text: #17181a;
+      --text-dim: #5b5e66;
+      --accent: #a6740a;
+      --accent-soft: rgba(166, 116, 10, 0.10);
+      --link: #1a56db;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0a0b0d; --bg-elev: #131417; --border: #23262b;
+    --text: #e8e9ea; --text-dim: #9a9da3; --accent: #e8b64c;
+    --accent-soft: rgba(232, 182, 76, 0.12); --link: #7fb0ff;
+  }
+  :root[data-theme="light"] {
+    --bg: #f7f7f8; --bg-elev: #ffffff; --border: #e3e4e7;
+    --text: #17181a; --text-dim: #5b5e66; --accent: #a6740a;
+    --accent-soft: rgba(166, 116, 10, 0.10); --link: #1a56db;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+  }
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+  header.page-head {
+    margin-bottom: 48px;
+  }
+  header.page-head h1 {
+    font-size: 2.1rem;
+    margin: 0 0 8px;
+    letter-spacing: -0.02em;
+  }
+  header.page-head p {
+    color: var(--text-dim);
+    margin: 0;
+    max-width: 640px;
+  }
+  section.category {
+    margin-bottom: 44px;
+  }
+  section.category h2 {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 10px;
+    margin: 0 0 20px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+  }
+  .card {
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: border-color 0.15s ease;
+  }
+  .card:hover {
+    border-color: var(--accent);
+  }
+  .card-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .card-title:hover { color: var(--link); }
+  .card-title .arrow { opacity: 0; transition: opacity 0.15s ease; font-size: 0.9em; }
+  .card-title:hover .arrow { opacity: 1; }
+  .card-desc {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    flex-grow: 1;
+  }
+  .tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 2px;
+  }
+  .tech span {
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    background: var(--accent-soft);
+    border-radius: 999px;
+    padding: 3px 9px;
+    white-space: nowrap;
+  }
+  .repo-link {
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    text-decoration: none;
+    border-top: 1px solid var(--border);
+    padding-top: 8px;
+    margin-top: 2px;
+  }
+  .repo-link:hover { color: var(--link); }
+  .no-pages-note {
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    font-style: italic;
+  }
+  footer {
+    margin-top: 64px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    color: var(--text-dim);
+    font-size: 0.8rem;
+  }
+  footer a { color: var(--text-dim); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="page-head">
+    <h1>Project Map</h1>
+    <p>Index of active projects, grouped by domain. Each card links to the live GitHub Pages
+      deployment when one exists; otherwise it links straight to the source repository.</p>
+  </header>
+
+  <section class="category">
+    <h2>Market Related</h2>
+    <div class="grid">
+
+      <div class="card">
+        <a class="card-title" href="https://zeusnightbolt.github.io/BoltNews/" target="_blank" rel="noopener">BoltNews <span class="arrow">↗</span></a>
+        <div class="card-desc">Daily automated cross-asset news-intelligence pipeline for a fundamental long/short PM — synthesizes pre-market, post-market, and weekend research briefings across equities, rates, credit, FX, commodities, volatility, and crypto via multi-agent discovery lanes.</div>
+        <div class="tech"><span>Python 3.12</span><span>Multi-agent LLM pipeline</span><span>Cron</span><span>Static HTML dashboard</span><span>GitHub Pages</span></div>
+        <a class="repo-link" href="https://github.com/ZeusNightBolt/BoltNews" target="_blank" rel="noopener">Repository →</a>
+      </div>
+
+      <div class="card">
+        <a class="card-title" href="https://zeusnightbolt.github.io/equity-screener/" target="_blank" rel="noopener">Equity Screener <span class="arrow">↗</span></a>
+        <div class="card-desc">Daily dashboard ranking low-priced, $5B+ market-cap VTI stocks across seven deterministic scoring sleeves (RSI inflection, value, momentum, squeeze) plus a wave-stage classifier and an adaptive, factor-momentum-tilted EV master score.</div>
+        <div class="tech"><span>Python</span><span>DuckDB / Polygon warehouse</span><span>pandas</span><span>Cron</span><span>GitHub Pages</span></div>
+        <a class="repo-link" href="https://github.com/ZeusNightBolt/equity-screener" target="_blank" rel="noopener">Repository →</a>
+      </div>
+
+      <div class="card">
+        <a class="card-title" href="https://zeusnightbolt.github.io/AI-Assisted-Earnings-Screener/" target="_blank" rel="noopener">AI Assisted Earnings Screener <span class="arrow">↗</span></a>
+        <div class="card-desc">Identifies stocks with the strongest technical/fundamental setup heading into earnings, cross-referencing VTI holdings against a SEC EDGAR/DoltHub earnings calendar and reusing the equity screener's 7-sleeve scoring engine, enriched with LLM commentary.</div>
+        <div class="tech"><span>Python</span><span>SEC EDGAR</span><span>DoltHub</span><span>DuckDB</span><span>DeepSeek LLM</span><span>GitHub Actions → Pages</span></div>
+        <a class="repo-link" href="https://github.com/ZeusNightBolt/AI-Assisted-Earnings-Screener" target="_blank" rel="noopener">Repository →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="category">
+    <h2>Agentic / Workflow</h2>
+    <div class="grid">
+
+      <div class="card">
+        <a class="card-title" href="https://github.com/ZeusNightBolt/CRE-AI-Agent" target="_blank" rel="noopener">CRE AI Agent <span class="arrow">↗</span></a>
+        <div class="card-desc">Automated commercial real estate pipeline: scrapes LoopNet listings past Akamai bot protection via Firefox remote-debugging, then serves the deal set through an interactive underwriting dashboard for deep-dive analysis.</div>
+        <div class="tech"><span>Python</span><span>Selenium / Firefox CDP</span><span>Streamlit</span><span>Static HTML dashboard</span></div>
+        <div class="no-pages-note">No GitHub Pages deployment — links to the repository.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="category">
+    <h2>Gambling / Casino</h2>
+    <div class="grid">
+
+      <div class="card">
+        <a class="card-title" href="https://zeusnightbolt.github.io/BlackjackTrainer/" target="_blank" rel="noopener">Blackjack Trainer <span class="arrow">↗</span></a>
+        <div class="card-desc">Interactive basic-strategy and Hi-Lo card-counting trainer set at an Atlantic City high-limit table, with move-by-move coaching, count-aware bet sizing, behavioral guardrails, and full-shoe simulation.</div>
+        <div class="tech"><span>React 18</span><span>Vite 5</span><span>Tailwind CSS 3</span><span>GitHub Actions → Pages</span></div>
+        <a class="repo-link" href="https://github.com/ZeusNightBolt/BlackjackTrainer" target="_blank" rel="noopener">Repository →</a>
+      </div>
+
+      <div class="card">
+        <a class="card-title" href="https://zeusnightbolt.github.io/PokerTrainer/" target="_blank" rel="noopener">Poker Trainer <span class="arrow">↗</span></a>
+        <div class="card-desc">Browser-based No-Limit Texas Hold'em trainer — play against randomized bots with a live Chen-formula/pot-odds strategy coach, a Monte Carlo equity and variance tracker, and interactive range-chart and quiz tools.</div>
+        <div class="tech"><span>Vanilla JS / HTML / CSS</span><span>No build step</span><span>GitHub Actions → Pages</span></div>
+        <a class="repo-link" href="https://github.com/ZeusNightBolt/PokerTrainer" target="_blank" rel="noopener">Repository →</a>
+      </div>
+
+      <div class="card">
+        <a class="card-title" href="https://zeusnightbolt.github.io/RouletteTrainer/" target="_blank" rel="noopener">Roulette Trainer <span class="arrow">↗</span></a>
+        <div class="card-desc">Dark-theme double- and single-zero roulette simulator built to test whether wheel-quadrant "droughts" carry tradeable information — live telemetry, χ² stats, bankroll analytics, and a Fallacy Lab running 100k simulated spins.</div>
+        <div class="tech"><span>React</span><span>Vite</span><span>Crypto-secure RNG</span><span>CI-verified Monte Carlo</span><span>GitHub Actions → Pages</span></div>
+        <a class="repo-link" href="https://github.com/ZeusNightBolt/RouletteTrainer" target="_blank" rel="noopener">Repository →</a>
+      </div>
+
+      <div class="card">
+        <a class="card-title" href="https://zeusnightbolt.github.io/CrapsTrainer/" target="_blank" rel="noopener">Craps Trainer <span class="arrow">↗</span></a>
+        <div class="card-desc">Mathematically verified craps trainer and simulator covering every bet on the table, with a live coach recommending the edge-minimizing next move and a Monte Carlo strategy simulator across thousands of sessions.</div>
+        <div class="tech"><span>React</span><span>Vite</span><span>Monte Carlo-verified engine</span><span>GitHub Actions → Pages</span></div>
+        <a class="repo-link" href="https://github.com/ZeusNightBolt/CrapsTrainer" target="_blank" rel="noopener">Repository →</a>
+      </div>
+
+      <div class="card">
+        <a class="card-title" href="https://zeusnightbolt.github.io/BetNews/" target="_blank" rel="noopener">BetNews <span class="arrow">↗</span></a>
+        <div class="card-desc">Daily automated betting-intelligence briefing: consensus odds, positive-EV screens, and underdog trend analysis aggregated across Polymarket, Kalshi, DraftKings, FanDuel, and 60+ other sportsbooks and analytics sources.</div>
+        <div class="tech"><span>Python 3.11+ (stdlib)</span><span>Polymarket Gamma API</span><span>RSS feeds</span><span>Vanilla JS search</span><span>GitHub Actions → Pages</span></div>
+        <a class="repo-link" href="https://github.com/ZeusNightBolt/BetNews" target="_blank" rel="noopener">Repository →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    Source and full documentation in <a href="https://github.com/ZeusNightBolt/Project-Map/blob/main/README.md">README.md</a>.
+  </footer>
+
+</div>
+</body>
+</html>

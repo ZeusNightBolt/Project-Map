@@ -1,9 +1,10 @@
 # Project-Map
 
-Index of active projects, grouped by domain. This repo publishes a landing page (`index.html`)
-via GitHub Pages at **https://zeusnightbolt.github.io/Project-Map/** — a tabbed, dark/neon
-interface with three sections: **Trader Command Zone**, **Agentic Workflows**, and **Casino**.
-The tables below are the underlying source of truth.
+Index of active projects, grouped by domain. This repo publishes a landing page (`index.html`),
+titled **ZeusBot Project Directory**, via GitHub Pages at
+**https://zeusnightbolt.github.io/Project-Map/** — a tabbed, dark/neon interface with three
+sections: **Trader Command Zone**, **Agentic Workflows**, and **Casino**. The tables below are
+the underlying source of truth.
 
 Link convention: a project links to its live **GitHub Pages** deployment when one exists;
 otherwise it links straight to the **repository**. Where a Pages site exists, the repository is

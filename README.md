@@ -9,6 +9,12 @@ Link convention: a project links to its live **GitHub Pages** deployment when on
 otherwise it links straight to the **repository**. Where a Pages site exists, the repository is
 also listed separately.
 
+## ★ Featured
+
+| Project | Icon | Live site | Repository | Tech | Description |
+|---|---|---|---|---|---|
+| **Grand Atlantic** | 🏛️ | [zeusnightbolt.github.io/GrandAtlanticLive](https://zeusnightbolt.github.io/GrandAtlanticLive/) | [repo](https://github.com/ZeusNightBolt/GrandAtlanticLive) | React, Vite, Vanilla JS, localStorage session state, client-side only | Flagship five-table casino floor — Blackjack, Roulette, Baccarat, Craps, and Poker trainers behind one animated front end, sharing a single bankroll and profit goal across all five games. Also listed under Casino below. |
+
 ## 📡 Trader Command Zone
 
 | Project | Icon | Live site | Repository | Tech | Description |
@@ -28,6 +34,7 @@ also listed separately.
 
 | Project | Icon | Live site | Repository | Tech | Description |
 |---|---|---|---|---|---|
+| **Grand Atlantic** | 🏛️ | [zeusnightbolt.github.io/GrandAtlanticLive](https://zeusnightbolt.github.io/GrandAtlanticLive/) | [repo](https://github.com/ZeusNightBolt/GrandAtlanticLive) | React, Vite, Vanilla JS, client-side only | Flagship five-table casino floor aggregating Blackjack, Roulette, Baccarat, Craps, and Poker trainers behind one animated front end, sharing a single bankroll and profit goal across all five games. |
 | **Blackjack Trainer** | 🃏 | [zeusnightbolt.github.io/BlackjackTrainer](https://zeusnightbolt.github.io/BlackjackTrainer/) | [repo](https://github.com/ZeusNightBolt/BlackjackTrainer) | React 18, Vite 5, Tailwind CSS 3, GitHub Actions → Pages | Interactive basic-strategy and Hi-Lo card-counting trainer set at an Atlantic City high-limit table, with move-by-move coaching, count-aware bet sizing, behavioral guardrails, and full-shoe simulation. |
 | **Poker Trainer** | ♠️ | [zeusnightbolt.github.io/PokerTrainer](https://zeusnightbolt.github.io/PokerTrainer/) | [repo](https://github.com/ZeusNightBolt/PokerTrainer) | Vanilla JS/HTML/CSS (no build step), GitHub Actions → Pages | Browser-based No-Limit Texas Hold'em trainer — play against randomized bots with a live Chen-formula/pot-odds strategy coach, a Monte Carlo equity/variance tracker, and interactive range-chart and quiz tools. |
 | **Roulette Trainer** | 🎡 | [zeusnightbolt.github.io/RouletteTrainer](https://zeusnightbolt.github.io/RouletteTrainer/) | [repo](https://github.com/ZeusNightBolt/RouletteTrainer) | React, Vite, crypto-secure RNG, CI-verified Monte Carlo, GitHub Actions → Pages | Dark-theme double- and single-zero roulette simulator built to test whether wheel-quadrant "droughts" carry tradeable information — live telemetry, χ² stats, bankroll analytics, and a Fallacy Lab running 100k simulated spins. |

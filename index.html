@@ -71,6 +71,116 @@
     font-size: 0.95rem;
   }
 
+  /* Hero — featured flagship app */
+  .hero-frame {
+    border-radius: 22px;
+    padding: 2px;
+    margin: 8px 0 40px;
+    background: linear-gradient(120deg, var(--cyan), var(--violet), var(--pink), var(--gold), var(--cyan));
+    background-size: 300% 300%;
+    animation: hero-gradient-move 8s ease infinite;
+    box-shadow: 0 0 40px -12px rgba(255,79,216,0.5);
+  }
+  @keyframes hero-gradient-move {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  .hero-inner {
+    border-radius: 20px;
+    background: linear-gradient(180deg, var(--panel-2), var(--panel));
+    padding: 30px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-badge {
+    display: inline-block;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-shadow: 0 0 10px rgba(255,209,102,0.6);
+    margin-bottom: 16px;
+  }
+  .hero-games-row {
+    display: flex;
+    gap: 16px;
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+    line-height: 1;
+  }
+  .hero-games-row span { filter: drop-shadow(0 0 6px rgba(255,255,255,0.15)); }
+  .hero-bankroll-line {
+    position: relative;
+    height: 2px;
+    width: 100%;
+    max-width: 320px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  .hero-bankroll-dot {
+    position: absolute;
+    top: -3px;
+    left: -8px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 10px 2px rgba(255,209,102,0.9);
+    animation: bankroll-flow 3s linear infinite;
+  }
+  @keyframes bankroll-flow {
+    0% { left: -8px; }
+    100% { left: 100%; }
+  }
+  .hero-title {
+    font-size: 1.7rem;
+    margin: 0 0 12px;
+    color: var(--text);
+    letter-spacing: -0.01em;
+  }
+  .hero-title-sub {
+    display: block;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text-dim);
+    margin-top: 4px;
+  }
+  .hero-desc {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    max-width: 760px;
+    margin: 0 0 18px;
+  }
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: linear-gradient(90deg, var(--pink), var(--violet));
+    color: #05060a;
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 11px 22px;
+    border-radius: 999px;
+    text-decoration: none;
+    box-shadow: 0 0 24px -4px rgba(255,79,216,0.7);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .hero-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 0 32px -2px rgba(255,79,216,0.9);
+  }
+
   /* Tabs */
   .tabs {
     display: flex;
@@ -240,6 +350,9 @@
   @media (max-width: 520px) {
     .tabs { gap: 4px; }
     .tab-btn { padding: 10px 12px; font-size: 0.8rem; }
+    .hero-inner { padding: 22px 20px; }
+    .hero-title { font-size: 1.4rem; }
+    .hero-games-row { font-size: 1.25rem; gap: 12px; }
   }
 </style>
 </head>
@@ -252,6 +365,24 @@
     <p>Index of active projects. Each card links to the live GitHub Pages deployment when one
       exists; otherwise it links straight to the source repository.</p>
   </header>
+
+  <!-- FEATURED: GRAND ATLANTIC -->
+  <section class="hero-frame">
+    <div class="hero-inner">
+      <div class="hero-badge">★ Featured — The Casino Floor</div>
+      <div class="hero-games-row">
+        <span title="Blackjack">🃏</span><span title="Poker">♠️</span><span title="Roulette">🎡</span><span title="Craps">🎲</span><span title="Baccarat">🐉</span>
+      </div>
+      <div class="hero-bankroll-line"><div class="hero-bankroll-dot"></div></div>
+      <h2 class="hero-title">GRAND ATLANTIC<span class="hero-title-sub">Five-Table Casino Floor Trainer</span></h2>
+      <p class="hero-desc">Five Atlantic City table-game trainers — Blackjack, Roulette, Baccarat, Craps, and Poker — behind one animated casino floor, sharing a single bankroll and a profit goal. Every house edge is shown, taught, and never hidden.</p>
+      <div class="tech"><span>React</span><span>Vite</span><span>Vanilla JS</span><span>localStorage session state</span><span>Client-side only</span></div>
+      <div class="hero-actions">
+        <a class="hero-cta" href="https://zeusnightbolt.github.io/GrandAtlanticLive/" target="_blank" rel="noopener">Launch App ↗</a>
+        <a class="repo-link" href="https://github.com/ZeusNightBolt/GrandAtlanticLive" target="_blank" rel="noopener">Repository →</a>
+      </div>
+    </div>
+  </section>
 
   <nav class="tabs" role="tablist">
     <button class="tab-btn is-active" data-accent="cyan" data-tab="trader" role="tab" aria-selected="true">
@@ -349,6 +480,19 @@
   <section class="panel" id="panel-casino">
     <p class="panel-intro">Mathematically verified casino-game trainers — every payout and edge is checked against theory before it ships.</p>
     <div class="grid">
+
+      <div class="card" data-accent="pink">
+        <div class="card-top">
+          <div class="card-icon">🏛️</div>
+          <a class="card-title" href="https://zeusnightbolt.github.io/GrandAtlanticLive/" target="_blank" rel="noopener">Grand Atlantic <span class="arrow">↗</span></a>
+        </div>
+        <div class="card-desc">Flagship five-table casino floor aggregating Blackjack, Roulette, Baccarat, Craps, and Poker trainers behind one animated front end, sharing a single bankroll and profit goal across all five games.</div>
+        <div class="tech"><span>React</span><span>Vite</span><span>Vanilla JS</span><span>Client-side only</span></div>
+        <div class="card-footer">
+          <span class="no-pages-note"><span class="status-dot live"></span>Live on Pages</span>
+          <a class="repo-link" href="https://github.com/ZeusNightBolt/GrandAtlanticLive" target="_blank" rel="noopener">Repository →</a>
+        </div>
+      </div>
 
       <div class="card" data-accent="pink">
         <div class="card-top">

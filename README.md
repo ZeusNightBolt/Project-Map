@@ -10,6 +10,17 @@ Link convention: a project links to its live **GitHub Pages** deployment when on
 otherwise it links straight to the **repository**. Where a Pages site exists, the repository is
 also listed separately.
 
+## Favicon & link-preview assets
+
+`assets/` holds the real, hosted icon and social-preview files (`favicon.svg`, `favicon-32.png`,
+`favicon-64.png`, `apple-touch-icon.png`, `icon-512.png`, `og-image.png`). These are committed as
+actual files rather than inline data URIs — many link-preview crawlers (iMessage, Slack, X, etc.)
+and iOS's apple-touch-icon require a real, fetchable image URL and won't reliably resolve a
+`data:` URI, which is why an earlier version of this page showed a stale/wrong icon when shared.
+`index.html`'s `og:image`/`twitter:image` point at `assets/og-image.png`, a rendered 1200×630 card
+matching the site's dark/neon theme, so that's what should now appear as the link preview
+everywhere.
+
 ## ★ Featured
 
 | Project | Icon | Live site | Repository | Tech | Description |

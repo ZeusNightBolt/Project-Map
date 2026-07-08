@@ -107,7 +107,7 @@
   .hero-frame {
     border-radius: 22px;
     padding: 2px;
-    margin: 28px 0 40px;
+    margin: 4px 0 32px;
     background: linear-gradient(120deg, var(--trader), var(--agentic), var(--casino), var(--gold), var(--trader));
     background-size: 300% 300%;
     animation: hero-gradient-move 8s ease infinite;
@@ -374,23 +374,6 @@
     color: var(--text);
   }
 
-  .card-flagship {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-    font-size: 0.62rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--gold);
-    border: 1px solid var(--gold);
-    border-radius: 999px;
-    padding: 2px 9px;
-    margin-bottom: 8px;
-    align-self: flex-start;
-    text-shadow: 0 0 8px rgba(255,209,102,0.6);
-  }
-
   .card-desc { color: var(--text-dim); font-size: 0.88rem; flex-grow: 1; }
 
   .tech { display: flex; flex-wrap: wrap; gap: 6px; position: relative; z-index: 2; pointer-events: none; }
@@ -477,25 +460,6 @@
     <p>Index of active projects. Each card opens its live deployment on click; where none exists,
       it opens the source repository instead. Repository links are also listed separately.</p>
   </header>
-
-  <!-- FEATURED: GRAND ATLANTIC -->
-  <section class="hero-frame">
-    <div class="hero-inner">
-      <div class="hero-scanline"></div>
-      <div class="hero-badge"><span class="pulse-dot"></span>Featured — The Casino Floor</div>
-      <div class="hero-games-row">
-        <span title="Blackjack">🃏</span><span title="Poker">♠️</span><span title="Roulette">🎡</span><span title="Craps">🎲</span><span title="Baccarat">🐉</span>
-      </div>
-      <div class="hero-bankroll-line"><div class="hero-bankroll-dot"></div></div>
-      <h2 class="hero-title">GRAND ATLANTIC<span class="hero-title-sub">Five-Table Casino Floor Trainer</span></h2>
-      <p class="hero-desc">Five Atlantic City table-game trainers — Blackjack, Roulette, Baccarat, Craps, and Poker — behind one animated casino floor, sharing a single bankroll and a profit goal. Every house edge is shown, taught, and never hidden.</p>
-      <div class="tech"><span>React</span><span>Vite</span><span>Vanilla JS</span><span>localStorage session state</span><span>Client-side only</span></div>
-      <div class="hero-actions">
-        <a class="hero-cta" href="https://zeusnightbolt.github.io/GrandAtlanticLive/" target="_blank" rel="noopener">Launch App ↗</a>
-        <a class="hero-repo-link" href="https://github.com/ZeusNightBolt/GrandAtlanticLive" target="_blank" rel="noopener">Repository →</a>
-      </div>
-    </div>
-  </section>
 
   <nav class="tabs" role="tablist">
     <button class="tab-btn is-active" data-accent="trader" data-tab="trader" role="tab" aria-selected="true">
@@ -597,22 +561,27 @@
   <!-- CASINO -->
   <section class="panel" id="panel-casino">
     <p class="panel-intro">Mathematically verified casino-game trainers — every payout and edge is checked against theory before it ships.</p>
-    <div class="grid">
 
-      <div class="card" data-accent="casino">
-        <a class="card-cover" href="https://zeusnightbolt.github.io/GrandAtlanticLive/" target="_blank" rel="noopener" aria-label="Open Grand Atlantic"></a>
-        <div class="card-flagship">★ Flagship</div>
-        <div class="card-top">
-          <div class="card-icon">🏛️</div>
-          <span class="card-title">Grand Atlantic</span>
+    <!-- FEATURED: GRAND ATLANTIC -->
+    <section class="hero-frame">
+      <div class="hero-inner">
+        <div class="hero-scanline"></div>
+        <div class="hero-badge"><span class="pulse-dot"></span>Featured — The Casino Floor</div>
+        <div class="hero-games-row">
+          <span title="Blackjack">🃏</span><span title="Poker">♠️</span><span title="Roulette">🎡</span><span title="Craps">🎲</span><span title="Baccarat">🐉</span>
         </div>
-        <div class="card-desc">Flagship five-table casino floor aggregating Blackjack, Roulette, Baccarat, Craps, and Poker trainers behind one animated front end, sharing a single bankroll and profit goal across all five games.</div>
-        <div class="tech"><span>React</span><span>Vite</span><span>Vanilla JS</span><span>Client-side only</span></div>
-        <div class="card-footer">
-          <span class="card-open"><span class="status-dot live"></span>Open app ↗</span>
-          <a class="repo-link" href="https://github.com/ZeusNightBolt/GrandAtlanticLive" target="_blank" rel="noopener">Repository →</a>
+        <div class="hero-bankroll-line"><div class="hero-bankroll-dot"></div></div>
+        <h2 class="hero-title">GRAND ATLANTIC<span class="hero-title-sub">Five-Table Casino Floor Trainer</span></h2>
+        <p class="hero-desc">Five Atlantic City table-game trainers — Blackjack, Roulette, Baccarat, Craps, and Poker — behind one animated casino floor, sharing a single bankroll and a profit goal. Every house edge is shown, taught, and never hidden.</p>
+        <div class="tech"><span>React</span><span>Vite</span><span>Vanilla JS</span><span>localStorage session state</span><span>Client-side only</span></div>
+        <div class="hero-actions">
+          <a class="hero-cta" href="https://zeusnightbolt.github.io/GrandAtlanticLive/" target="_blank" rel="noopener">Launch App ↗</a>
+          <a class="hero-repo-link" href="https://github.com/ZeusNightBolt/GrandAtlanticLive" target="_blank" rel="noopener">Repository →</a>
         </div>
       </div>
+    </section>
+
+    <div class="grid">
 
       <div class="card" data-accent="casino">
         <a class="card-cover" href="https://zeusnightbolt.github.io/BlackjackTrainer/" target="_blank" rel="noopener" aria-label="Open Blackjack Trainer"></a>

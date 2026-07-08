@@ -2,14 +2,14 @@
 
 Index of active projects, grouped by domain. This repo publishes a landing page (`index.html`),
 titled **ZeusBot Project Directory**, via GitHub Pages at
-**https://zeusnightbolt.github.io/Project-Map/** — a dark, neon-themed interface with an
-animated featured banner for the flagship app up top, and three tabbed sections below it:
-**Trader Command Zone**, **Agentic Workflows**, and **Casino**. The tables below are the
-underlying source of truth.
+**https://zeusnightbolt.github.io/Project-Map/** — a dark, neon-themed interface with three
+tabbed sections: **Trader Command Zone**, **Agentic Workflows**, and **Casino**. The tables below
+are the underlying source of truth.
 
 **Featured:** [Grand Atlantic](https://zeusnightbolt.github.io/GrandAtlanticLive/) gets a glowing,
-animated hero banner at the top of the landing page (rotating gradient border, scanline sweep,
-"bankroll" flow animation), in addition to its "★ Flagship" card at the top of the Casino tab.
+animated hero banner (rotating gradient border, scanline sweep, "bankroll" flow animation) at the
+top of the **Casino** tab, above the grid of individual trainers — it isn't repeated as a regular
+card in that grid.
 
 Link convention: the entire card is clickable and opens the project's live **GitHub Pages**
 deployment when one exists, otherwise the source **repository**. A "Repository →" link is also
@@ -43,9 +43,10 @@ so that's what should appear as the link preview everywhere.
 
 ## 🎰 Casino
 
+Featured above the table below: **Grand Atlantic** (🏛️) — [zeusnightbolt.github.io/GrandAtlanticLive](https://zeusnightbolt.github.io/GrandAtlanticLive/) · [repo](https://github.com/ZeusNightBolt/GrandAtlanticLive) · React, Vite, Vanilla JS, client-side only. Flagship five-table casino floor aggregating Blackjack, Roulette, Baccarat, Craps, and Poker trainers behind one animated front end, sharing a single bankroll and profit goal across all five games.
+
 | Project | Icon | Live site | Repository | Tech | Description |
 |---|---|---|---|---|---|
-| **Grand Atlantic** | 🏛️ | [zeusnightbolt.github.io/GrandAtlanticLive](https://zeusnightbolt.github.io/GrandAtlanticLive/) | [repo](https://github.com/ZeusNightBolt/GrandAtlanticLive) | React, Vite, Vanilla JS, client-side only | Flagship five-table casino floor aggregating Blackjack, Roulette, Baccarat, Craps, and Poker trainers behind one animated front end, sharing a single bankroll and profit goal across all five games. |
 | **Blackjack Trainer** | 🃏 | [zeusnightbolt.github.io/BlackjackTrainer](https://zeusnightbolt.github.io/BlackjackTrainer/) | [repo](https://github.com/ZeusNightBolt/BlackjackTrainer) | React 18, Vite 5, Tailwind CSS 3, GitHub Actions → Pages | Interactive basic-strategy and Hi-Lo card-counting trainer set at an Atlantic City high-limit table, with move-by-move coaching, count-aware bet sizing, behavioral guardrails, and full-shoe simulation. |
 | **Poker Trainer** | ♠️ | [zeusnightbolt.github.io/PokerTrainer](https://zeusnightbolt.github.io/PokerTrainer/) | [repo](https://github.com/ZeusNightBolt/PokerTrainer) | Vanilla JS/HTML/CSS (no build step), GitHub Actions → Pages | Browser-based No-Limit Texas Hold'em trainer — play against randomized bots with a live Chen-formula/pot-odds strategy coach, a Monte Carlo equity/variance tracker, and interactive range-chart and quiz tools. |
 | **Roulette Trainer** | 🎡 | [zeusnightbolt.github.io/RouletteTrainer](https://zeusnightbolt.github.io/RouletteTrainer/) | [repo](https://github.com/ZeusNightBolt/RouletteTrainer) | React, Vite, crypto-secure RNG, CI-verified Monte Carlo, GitHub Actions → Pages | Dark-theme double- and single-zero roulette simulator built to test whether wheel-quadrant "droughts" carry tradeable information — live telemetry, χ² stats, bankroll analytics, and a Fallacy Lab running 100k simulated spins. |

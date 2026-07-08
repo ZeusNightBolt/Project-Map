@@ -2,9 +2,14 @@
 
 Index of active projects, grouped by domain. This repo publishes a landing page (`index.html`),
 titled **ZeusBot Project Directory**, via GitHub Pages at
-**https://zeusnightbolt.github.io/Project-Map/** — a tabbed, dark, institutional-research-desk
-themed interface with three sections: **Trader Command Zone**, **Agentic Workflows**, and
-**Casino**. The tables below are the underlying source of truth.
+**https://zeusnightbolt.github.io/Project-Map/** — a dark, neon-themed interface with an
+animated featured banner for the flagship app up top, and three tabbed sections below it:
+**Trader Command Zone**, **Agentic Workflows**, and **Casino**. The tables below are the
+underlying source of truth.
+
+**Featured:** [Grand Atlantic](https://zeusnightbolt.github.io/GrandAtlanticLive/) gets a glowing,
+animated hero banner at the top of the landing page (rotating gradient border, scanline sweep,
+"bankroll" flow animation), in addition to its "★ Flagship" card at the top of the Casino tab.
 
 Link convention: the entire card is clickable and opens the project's live **GitHub Pages**
 deployment when one exists, otherwise the source **repository**. A "Repository →" link is also

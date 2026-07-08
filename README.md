@@ -2,13 +2,14 @@
 
 Index of active projects, grouped by domain. This repo publishes a landing page (`index.html`),
 titled **ZeusBot Project Directory**, via GitHub Pages at
-**https://zeusnightbolt.github.io/Project-Map/** — a tabbed, dark/neon interface with three
-sections: **Trader Command Zone**, **Agentic Workflows**, and **Casino**. The tables below are
-the underlying source of truth.
+**https://zeusnightbolt.github.io/Project-Map/** — a tabbed, dark, institutional-research-desk
+themed interface with three sections: **Trader Command Zone**, **Agentic Workflows**, and
+**Casino**. The tables below are the underlying source of truth.
 
-Link convention: a project links to its live **GitHub Pages** deployment when one exists;
-otherwise it links straight to the **repository**. Where a Pages site exists, the repository is
-also listed separately.
+Link convention: the entire card is clickable and opens the project's live **GitHub Pages**
+deployment when one exists, otherwise the source **repository**. A "Repository →" link is also
+shown separately on the card when a Pages site exists, so the repo is always one click away
+without following the primary link.
 
 ## Favicon & link-preview assets
 
@@ -17,24 +18,17 @@ also listed separately.
 actual files rather than inline data URIs — many link-preview crawlers (iMessage, Slack, X, etc.)
 and iOS's apple-touch-icon require a real, fetchable image URL and won't reliably resolve a
 `data:` URI, which is why an earlier version of this page showed a stale/wrong icon when shared.
-`index.html`'s `og:image`/`twitter:image` point at `assets/og-image.png`, a rendered 1200×630 card
-matching the site's dark/neon theme, so that's what should now appear as the link preview
-everywhere.
-
-## ★ Featured
-
-| Project | Icon | Live site | Repository | Tech | Description |
-|---|---|---|---|---|---|
-| **Grand Atlantic** | 🏛️ | [zeusnightbolt.github.io/GrandAtlanticLive](https://zeusnightbolt.github.io/GrandAtlanticLive/) | [repo](https://github.com/ZeusNightBolt/GrandAtlanticLive) | React, Vite, Vanilla JS, localStorage session state, client-side only | Flagship five-table casino floor — Blackjack, Roulette, Baccarat, Craps, and Poker trainers behind one animated front end, sharing a single bankroll and profit goal across all five games. Also listed under Casino below. |
+`index.html`'s `og:image`/`twitter:image` point at `assets/og-image.png`, a rendered 1200×630 card,
+so that's what should appear as the link preview everywhere.
 
 ## 📡 Trader Command Zone
 
 | Project | Icon | Live site | Repository | Tech | Description |
 |---|---|---|---|---|---|
 | **BoltNews** | ⚡ | [zeusnightbolt.github.io/BoltNews](https://zeusnightbolt.github.io/BoltNews/) | [repo](https://github.com/ZeusNightBolt/BoltNews) | Python 3.12, multi-agent LLM pipeline, cron, static HTML dashboard, GitHub Pages | Daily automated cross-asset news-intelligence pipeline for a fundamental long/short PM. Synthesizes pre-market, post-market, and weekend research briefings across equities, rates, credit, FX, commodities, volatility, and crypto using multi-agent discovery lanes. |
+| **BetNews** | 🏈 | [zeusnightbolt.github.io/BetNews](https://zeusnightbolt.github.io/BetNews/) | [repo](https://github.com/ZeusNightBolt/BetNews) | Python 3.11+ (stdlib only), Polymarket Gamma API, RSS feeds, vanilla JS search, GitHub Actions → Pages | Daily automated betting-intelligence briefing: consensus odds, positive-EV screens, and underdog trend analysis aggregated across Polymarket, Kalshi, DraftKings, FanDuel, and 60+ other sportsbooks and analytics sources. |
 | **Equity Screener** | 📈 | [zeusnightbolt.github.io/equity-screener](https://zeusnightbolt.github.io/equity-screener/) | [repo](https://github.com/ZeusNightBolt/equity-screener) | Python, DuckDB/Polygon warehouse, pandas, GitHub Pages | Daily dashboard ranking low-priced, $5B+ market-cap VTI stocks across seven deterministic scoring sleeves (RSI inflection, value, momentum, squeeze) plus a wave-stage classifier and an adaptive, factor-momentum-tilted EV master score. |
 | **AI Assisted Earnings Screener** | 🧠 | [zeusnightbolt.github.io/AI-Assisted-Earnings-Screener](https://zeusnightbolt.github.io/AI-Assisted-Earnings-Screener/) | [repo](https://github.com/ZeusNightBolt/AI-Assisted-Earnings-Screener) | Python, SEC EDGAR, DoltHub, DuckDB, DeepSeek LLM, GitHub Actions → Pages | Screens for the best technical/fundamental setups heading into earnings by cross-referencing VTI holdings against a SEC EDGAR/DoltHub earnings calendar, reusing the equity screener's 7-sleeve scoring engine and adding LLM commentary. |
-| **BetNews** | 🏈 | [zeusnightbolt.github.io/BetNews](https://zeusnightbolt.github.io/BetNews/) | [repo](https://github.com/ZeusNightBolt/BetNews) | Python 3.11+ (stdlib only), Polymarket Gamma API, RSS feeds, vanilla JS search, GitHub Actions → Pages | Daily automated betting-intelligence briefing: consensus odds, positive-EV screens, and underdog trend analysis aggregated across Polymarket, Kalshi, DraftKings, FanDuel, and 60+ other sportsbooks and analytics sources. |
 
 ## 🤖 Agentic Workflows
 

@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>ZeusBot Project Directory</title>
-<meta name="description" content="ZeusBot Project Directory — Trader Command Zone, Agentic Workflows, and Casino. Index of active projects." />
+<meta name="description" content="ZeusBot Project Directory — Trader Command Zone, Agentic Workflows, Casino, and Passion Projects. Index of active projects." />
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
 <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png" />
@@ -13,7 +13,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="ZeusBot Project Directory" />
 <meta property="og:title" content="ZeusBot Project Directory" />
-<meta property="og:description" content="Trader Command Zone, Agentic Workflows, and Casino — index of active projects." />
+<meta property="og:description" content="Trader Command Zone, Agentic Workflows, Casino, and Passion Projects — index of active projects." />
 <meta property="og:url" content="https://zeusnightbolt.github.io/Project-Map/" />
 <meta property="og:image" content="https://zeusnightbolt.github.io/Project-Map/assets/og-image.png" />
 <meta property="og:image:width" content="1200" />
@@ -21,7 +21,7 @@
 <meta property="og:image:alt" content="ZeusBot Project Directory" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="ZeusBot Project Directory" />
-<meta name="twitter:description" content="Trader Command Zone, Agentic Workflows, and Casino — index of active projects." />
+<meta name="twitter:description" content="Trader Command Zone, Agentic Workflows, Casino, and Passion Projects — index of active projects." />
 <meta name="twitter:image" content="https://zeusnightbolt.github.io/Project-Map/assets/og-image.png" />
 <style>
   :root {
@@ -38,6 +38,8 @@
     --agentic-dim: rgba(185, 139, 255, 0.14);
     --casino: #ff4fd8;
     --casino-dim: rgba(255, 79, 216, 0.14);
+    --passion: #ff8a5c;
+    --passion-dim: rgba(255, 138, 92, 0.14);
     --gold: #ffd166;
   }
 
@@ -84,7 +86,7 @@
     font-size: 2.3rem;
     margin: 0 0 10px;
     letter-spacing: -0.01em;
-    background: linear-gradient(90deg, #ffffff 0%, var(--trader) 45%, var(--agentic) 75%, var(--casino) 100%);
+    background: linear-gradient(90deg, #ffffff 0%, var(--trader) 40%, var(--agentic) 65%, var(--casino) 85%, var(--passion) 100%);
     background-size: 200% 100%;
     -webkit-background-clip: text;
     background-clip: text;
@@ -249,13 +251,6 @@
     transform: translateY(-2px) scale(1.03);
     box-shadow: 0 0 34px -2px rgba(255,79,216,0.95);
   }
-  .hero-repo-link {
-    position: relative;
-    font-size: 0.8rem;
-    color: var(--text-dim);
-    text-decoration: none;
-  }
-  .hero-repo-link:hover { color: var(--text); }
 
   /* Tabs */
   .tabs {
@@ -303,6 +298,12 @@
     border-color: var(--border);
     box-shadow: 0 -2px 18px -6px rgba(255,79,216,0.5) inset;
   }
+  .tab-btn[data-accent="passion"].is-active {
+    color: var(--passion);
+    background: var(--panel);
+    border-color: var(--border);
+    box-shadow: 0 -2px 18px -6px rgba(255,138,92,0.5) inset;
+  }
   .tab-btn.is-active .icon { filter: none; }
 
   /* Panels */
@@ -328,58 +329,90 @@
     background: linear-gradient(180deg, var(--panel-2), var(--panel));
     border: 1px solid var(--border);
     border-radius: 14px;
-    padding: 20px 22px;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    gap: 12px;
     transition: border-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
   }
   .card[data-accent="trader"]:hover  { border-color: var(--trader);  box-shadow: 0 0 28px -8px rgba(51,255,240,0.45);  transform: translateY(-2px); }
   .card[data-accent="agentic"]:hover { border-color: var(--agentic); box-shadow: 0 0 28px -8px rgba(185,139,255,0.45); transform: translateY(-2px); }
   .card[data-accent="casino"]:hover  { border-color: var(--casino);  box-shadow: 0 0 28px -8px rgba(255,79,216,0.45);  transform: translateY(-2px); }
+  .card[data-accent="passion"]:hover { border-color: var(--passion); box-shadow: 0 0 28px -8px rgba(255,138,92,0.45); transform: translateY(-2px); }
+  .card.is-locked { opacity: 0.88; }
+  .card.is-locked:hover { transform: none; box-shadow: none; border-color: var(--border); }
 
   /* Whole card is the primary click target (stretched-link pattern) */
   .card-cover {
     position: absolute;
     inset: 0;
     z-index: 1;
-    border-radius: inherit;
   }
   .card-cover:focus-visible {
     outline: 2px solid var(--text-dim);
-    outline-offset: 2px;
+    outline-offset: -2px;
+  }
+
+  .card-preview {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: var(--bg);
+  }
+  .card-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+  .card:hover .card-preview img { transform: scale(1.045); }
+  .card-preview::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 55%, rgba(11,13,20,0.55));
+    pointer-events: none;
+  }
+
+  .card-body {
+    padding: 18px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-grow: 1;
   }
 
   .card-top { display: flex; align-items: center; gap: 12px; }
   .card-icon {
-    font-size: 1.6rem;
-    width: 44px;
-    height: 44px;
-    min-width: 44px;
+    font-size: 1.4rem;
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 12px;
+    border-radius: 10px;
     border: 1px solid var(--border);
     transition: transform 0.18s ease;
   }
   .card[data-accent="trader"] .card-icon  { background: var(--trader-dim);  box-shadow: 0 0 16px -4px rgba(51,255,240,0.6); }
   .card[data-accent="agentic"] .card-icon { background: var(--agentic-dim); box-shadow: 0 0 16px -4px rgba(185,139,255,0.6); }
   .card[data-accent="casino"] .card-icon  { background: var(--casino-dim);  box-shadow: 0 0 16px -4px rgba(255,79,216,0.6); }
+  .card[data-accent="passion"] .card-icon { background: var(--passion-dim); box-shadow: 0 0 16px -4px rgba(255,138,92,0.6); }
   .card:hover .card-icon { transform: scale(1.08) rotate(-3deg); }
 
   .card-title {
-    font-size: 1.05rem;
+    font-size: 1.02rem;
     font-weight: 700;
     color: var(--text);
   }
 
-  .card-desc { color: var(--text-dim); font-size: 0.88rem; flex-grow: 1; }
+  .card-desc { color: var(--text-dim); font-size: 0.86rem; flex-grow: 1; }
 
   .tech { display: flex; flex-wrap: wrap; gap: 6px; position: relative; z-index: 2; pointer-events: none; }
   .tech span {
     font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-    font-size: 0.66rem;
+    font-size: 0.65rem;
     letter-spacing: 0.01em;
     color: var(--text-dim);
     background: rgba(255,255,255,0.04);
@@ -394,7 +427,6 @@
     z-index: 2;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     border-top: 1px solid var(--border);
     padding-top: 10px;
     margin-top: 2px;
@@ -412,15 +444,7 @@
   .card[data-accent="trader"]:hover .card-open  { color: var(--trader); }
   .card[data-accent="agentic"]:hover .card-open { color: var(--agentic); }
   .card[data-accent="casino"]:hover .card-open  { color: var(--casino); }
-
-  .repo-link {
-    position: relative;
-    z-index: 2;
-    font-size: 0.76rem;
-    color: var(--text-dim);
-    text-decoration: none;
-  }
-  .repo-link:hover { color: var(--text); }
+  .card[data-accent="passion"]:hover .card-open { color: var(--passion); }
 
   .status-dot {
     display: inline-block;
@@ -457,8 +481,8 @@
   <header class="page-head">
     <div class="eyebrow">// zeusnightbolt / project-map</div>
     <h1>ZeusBot Project Directory</h1>
-    <p>Index of active projects. Each card opens its live deployment on click; where none exists,
-      it opens the source repository instead. Repository links are also listed separately.</p>
+    <p>Index of active projects. Each card opens its live deployment on click. Source repositories
+      are private; where no public deployment exists, the card is informational only.</p>
   </header>
 
   <nav class="tabs" role="tablist">
@@ -471,66 +495,93 @@
     <button class="tab-btn" data-accent="casino" data-tab="casino" role="tab" aria-selected="false">
       <span class="icon">🎰</span> Casino
     </button>
+    <button class="tab-btn" data-accent="passion" data-tab="passion" role="tab" aria-selected="false">
+      <span class="icon">🎨</span> Passion Projects
+    </button>
   </nav>
 
   <!-- TRADER COMMAND ZONE -->
   <section class="panel is-active" id="panel-trader">
-    <p class="panel-intro">Automated market-intelligence pipelines — news synthesis, quant screening, earnings setups, and betting-market intelligence, all deployed as static dashboards.</p>
+    <p class="panel-intro">Automated market-intelligence pipelines — news synthesis, quant screening, factor and earnings setups, and betting-market intelligence, all deployed as static dashboards.</p>
     <div class="grid">
 
       <div class="card" data-accent="trader">
         <a class="card-cover" href="https://zeusnightbolt.github.io/BoltNews/" target="_blank" rel="noopener" aria-label="Open BoltNews"></a>
-        <div class="card-top">
-          <div class="card-icon">⚡</div>
-          <span class="card-title">BoltNews</span>
-        </div>
-        <div class="card-desc">Daily automated cross-asset news-intelligence pipeline for a fundamental long/short PM — synthesizes pre-market, post-market, and weekend research briefings across equities, rates, credit, FX, commodities, volatility, and crypto via multi-agent discovery lanes.</div>
-        <div class="tech"><span>Python 3.12</span><span>Multi-agent LLM pipeline</span><span>Cron</span><span>Static HTML dashboard</span></div>
-        <div class="card-footer">
-          <span class="card-open"><span class="status-dot live"></span>Open dashboard ↗</span>
-          <a class="repo-link" href="https://github.com/ZeusNightBolt/BoltNews" target="_blank" rel="noopener">Repository →</a>
+        <div class="card-preview"><img src="assets/previews/boltnews.png" alt="BoltNews dashboard preview" loading="lazy" /></div>
+        <div class="card-body">
+          <div class="card-top">
+            <div class="card-icon">⚡</div>
+            <span class="card-title">BoltNews</span>
+          </div>
+          <div class="card-desc">Daily automated cross-asset news-intelligence pipeline for a fundamental long/short PM — synthesizes pre-market, post-market, and weekend research briefings across equities, rates, credit, FX, commodities, volatility, and crypto via multi-agent discovery lanes.</div>
+          <div class="tech"><span>Python 3.12</span><span>Multi-agent LLM pipeline</span><span>Cron</span><span>Static HTML dashboard</span></div>
+          <div class="card-footer">
+            <span class="card-open"><span class="status-dot live"></span>Open dashboard ↗</span>
+          </div>
         </div>
       </div>
 
       <div class="card" data-accent="trader">
         <a class="card-cover" href="https://zeusnightbolt.github.io/BetNews/" target="_blank" rel="noopener" aria-label="Open BetNews"></a>
-        <div class="card-top">
-          <div class="card-icon">🏈</div>
-          <span class="card-title">BetNews</span>
-        </div>
-        <div class="card-desc">Daily automated betting-intelligence briefing: consensus odds, positive-EV screens, and underdog trend analysis aggregated across Polymarket, Kalshi, DraftKings, FanDuel, and 60+ other sportsbooks and analytics sources.</div>
-        <div class="tech"><span>Python 3.11+ (stdlib)</span><span>Polymarket Gamma API</span><span>RSS feeds</span><span>Vanilla JS search</span></div>
-        <div class="card-footer">
-          <span class="card-open"><span class="status-dot live"></span>Open dashboard ↗</span>
-          <a class="repo-link" href="https://github.com/ZeusNightBolt/BetNews" target="_blank" rel="noopener">Repository →</a>
+        <div class="card-preview"><img src="assets/previews/betnews.png" alt="BetNews dashboard preview" loading="lazy" /></div>
+        <div class="card-body">
+          <div class="card-top">
+            <div class="card-icon">🏈</div>
+            <span class="card-title">BetNews</span>
+          </div>
+          <div class="card-desc">Daily automated betting-intelligence briefing: consensus odds, positive-EV screens, and underdog trend analysis aggregated across Polymarket, Kalshi, DraftKings, FanDuel, and 60+ other sportsbooks and analytics sources.</div>
+          <div class="tech"><span>Python 3.11+ (stdlib)</span><span>Polymarket Gamma API</span><span>RSS feeds</span><span>Vanilla JS search</span></div>
+          <div class="card-footer">
+            <span class="card-open"><span class="status-dot live"></span>Open dashboard ↗</span>
+          </div>
         </div>
       </div>
 
       <div class="card" data-accent="trader">
         <a class="card-cover" href="https://zeusnightbolt.github.io/equity-screener/" target="_blank" rel="noopener" aria-label="Open Equity Screener"></a>
-        <div class="card-top">
-          <div class="card-icon">📈</div>
-          <span class="card-title">Equity Screener</span>
-        </div>
-        <div class="card-desc">Daily dashboard ranking low-priced, $5B+ market-cap VTI stocks across seven deterministic scoring sleeves (RSI inflection, value, momentum, squeeze) plus a wave-stage classifier and an adaptive, factor-momentum-tilted EV master score.</div>
-        <div class="tech"><span>Python</span><span>DuckDB / Polygon warehouse</span><span>pandas</span><span>Cron</span></div>
-        <div class="card-footer">
-          <span class="card-open"><span class="status-dot live"></span>Open dashboard ↗</span>
-          <a class="repo-link" href="https://github.com/ZeusNightBolt/equity-screener" target="_blank" rel="noopener">Repository →</a>
+        <div class="card-preview"><img src="assets/previews/equity-screener.png" alt="Equity Screener dashboard preview" loading="lazy" /></div>
+        <div class="card-body">
+          <div class="card-top">
+            <div class="card-icon">📈</div>
+            <span class="card-title">Equity Screener</span>
+          </div>
+          <div class="card-desc">Daily dashboard ranking low-priced, $5B+ market-cap VTI stocks across seven deterministic scoring sleeves (RSI inflection, value, momentum, squeeze) plus a wave-stage classifier and an adaptive, factor-momentum-tilted EV master score.</div>
+          <div class="tech"><span>Python</span><span>DuckDB / Polygon warehouse</span><span>pandas</span><span>Cron</span></div>
+          <div class="card-footer">
+            <span class="card-open"><span class="status-dot live"></span>Open dashboard ↗</span>
+          </div>
         </div>
       </div>
 
       <div class="card" data-accent="trader">
         <a class="card-cover" href="https://zeusnightbolt.github.io/AI-Assisted-Earnings-Screener/" target="_blank" rel="noopener" aria-label="Open AI Assisted Earnings Screener"></a>
-        <div class="card-top">
-          <div class="card-icon">🧠</div>
-          <span class="card-title">AI Assisted Earnings Screener</span>
+        <div class="card-preview"><img src="assets/previews/earnings-screener.png" alt="AI Assisted Earnings Screener dashboard preview" loading="lazy" /></div>
+        <div class="card-body">
+          <div class="card-top">
+            <div class="card-icon">🧠</div>
+            <span class="card-title">AI Assisted Earnings Screener</span>
+          </div>
+          <div class="card-desc">Identifies stocks with the strongest technical/fundamental setup heading into earnings, cross-referencing VTI holdings against a SEC EDGAR/DoltHub earnings calendar and reusing the equity screener's 7-sleeve scoring engine, enriched with LLM commentary.</div>
+          <div class="tech"><span>Python</span><span>SEC EDGAR</span><span>DoltHub</span><span>DuckDB</span><span>DeepSeek LLM</span></div>
+          <div class="card-footer">
+            <span class="card-open"><span class="status-dot live"></span>Open dashboard ↗</span>
+          </div>
         </div>
-        <div class="card-desc">Identifies stocks with the strongest technical/fundamental setup heading into earnings, cross-referencing VTI holdings against a SEC EDGAR/DoltHub earnings calendar and reusing the equity screener's 7-sleeve scoring engine, enriched with LLM commentary.</div>
-        <div class="tech"><span>Python</span><span>SEC EDGAR</span><span>DoltHub</span><span>DuckDB</span><span>DeepSeek LLM</span></div>
-        <div class="card-footer">
-          <span class="card-open"><span class="status-dot live"></span>Open dashboard ↗</span>
-          <a class="repo-link" href="https://github.com/ZeusNightBolt/AI-Assisted-Earnings-Screener" target="_blank" rel="noopener">Repository →</a>
+      </div>
+
+      <div class="card" data-accent="trader">
+        <a class="card-cover" href="https://zeusnightbolt.github.io/BoltFactors/" target="_blank" rel="noopener" aria-label="Open BoltFactors"></a>
+        <div class="card-preview"><img src="assets/previews/boltfactors.png" alt="BoltFactors dashboard preview" loading="lazy" /></div>
+        <div class="card-body">
+          <div class="card-top">
+            <div class="card-icon">🧮</div>
+            <span class="card-title">BoltFactors</span>
+          </div>
+          <div class="card-desc">AI-powered factor briefing — five-times-daily quantitative factor summaries generated from the VTI market-data warehouse, tracking regime shifts across value, momentum, quality, and volatility factors.</div>
+          <div class="tech"><span>Python</span><span>DuckDB / Polygon warehouse</span><span>Cron (5x daily)</span><span>Static HTML dashboard</span></div>
+          <div class="card-footer">
+            <span class="card-open"><span class="status-dot live"></span>Open dashboard ↗</span>
+          </div>
         </div>
       </div>
 
@@ -539,19 +590,37 @@
 
   <!-- AGENTIC WORKFLOWS -->
   <section class="panel" id="panel-agentic">
-    <p class="panel-intro">Autonomous scraping and underwriting pipelines that turn unstructured, protected sources into structured deal intelligence.</p>
+    <p class="panel-intro">Autonomous pipelines that turn unstructured, protected, or high-volume sources into structured intelligence.</p>
     <div class="grid">
 
-      <div class="card" data-accent="agentic">
-        <a class="card-cover" href="https://github.com/ZeusNightBolt/CRE-AI-Agent" target="_blank" rel="noopener" aria-label="Open CRE AI Agent repository"></a>
-        <div class="card-top">
-          <div class="card-icon">🏢</div>
-          <span class="card-title">CRE AI Agent</span>
+      <div class="card is-locked" data-accent="agentic">
+        <div class="card-preview"><img src="assets/previews/cre-ai-agent.png" alt="CRE AI Agent — private repository, no public deployment" loading="lazy" /></div>
+        <div class="card-body">
+          <div class="card-top">
+            <div class="card-icon">🏢</div>
+            <span class="card-title">CRE AI Agent</span>
+          </div>
+          <div class="card-desc">Automated commercial real estate pipeline: scrapes LoopNet listings past Akamai bot protection via Firefox remote-debugging, then serves the deal set through an interactive underwriting dashboard for per-deal deep dives.</div>
+          <div class="tech"><span>Python</span><span>Selenium / Firefox CDP</span><span>Streamlit</span><span>Static HTML dashboard</span></div>
+          <div class="card-footer">
+            <span class="card-open"><span class="status-dot dark"></span>Private — no public deployment</span>
+          </div>
         </div>
-        <div class="card-desc">Automated commercial real estate pipeline: scrapes LoopNet listings past Akamai bot protection via Firefox remote-debugging, then serves the deal set through an interactive underwriting dashboard for per-deal deep dives.</div>
-        <div class="tech"><span>Python</span><span>Selenium / Firefox CDP</span><span>Streamlit</span><span>Static HTML dashboard</span></div>
-        <div class="card-footer">
-          <span class="card-open"><span class="status-dot dark"></span>View repository ↗</span>
+      </div>
+
+      <div class="card" data-accent="agentic">
+        <a class="card-cover" href="https://zeusnightbolt.github.io/yt-briefing/" target="_blank" rel="noopener" aria-label="Open YouTube Briefings"></a>
+        <div class="card-preview"><img src="assets/previews/yt-briefing.png" alt="YouTube Briefings dashboard preview" loading="lazy" /></div>
+        <div class="card-body">
+          <div class="card-top">
+            <div class="card-icon">▶️</div>
+            <span class="card-title">YouTube Briefings</span>
+          </div>
+          <div class="card-desc">Intelligence generator for a tracked list of YouTube creators — turns their channel and video activity into a structured, digestible briefing.</div>
+          <div class="tech"><span>Python</span><span>Static HTML dashboard</span><span>GitHub Actions → Pages</span></div>
+          <div class="card-footer">
+            <span class="card-open"><span class="status-dot live"></span>Open dashboard ↗</span>
+          </div>
         </div>
       </div>
 
@@ -576,7 +645,6 @@
         <div class="tech"><span>React</span><span>Vite</span><span>Vanilla JS</span><span>localStorage session state</span><span>Client-side only</span></div>
         <div class="hero-actions">
           <a class="hero-cta" href="https://zeusnightbolt.github.io/GrandAtlanticLive/" target="_blank" rel="noopener">Launch App ↗</a>
-          <a class="hero-repo-link" href="https://github.com/ZeusNightBolt/GrandAtlanticLive" target="_blank" rel="noopener">Repository →</a>
         </div>
       </div>
     </section>
@@ -585,71 +653,105 @@
 
       <div class="card" data-accent="casino">
         <a class="card-cover" href="https://zeusnightbolt.github.io/BlackjackTrainer/" target="_blank" rel="noopener" aria-label="Open Blackjack Trainer"></a>
-        <div class="card-top">
-          <div class="card-icon">🃏</div>
-          <span class="card-title">Blackjack Trainer</span>
-        </div>
-        <div class="card-desc">Interactive basic-strategy and Hi-Lo card-counting trainer set at an Atlantic City high-limit table, with move-by-move coaching, count-aware bet sizing, behavioral guardrails, and full-shoe simulation.</div>
-        <div class="tech"><span>React 18</span><span>Vite 5</span><span>Tailwind CSS 3</span></div>
-        <div class="card-footer">
-          <span class="card-open"><span class="status-dot live"></span>Open app ↗</span>
-          <a class="repo-link" href="https://github.com/ZeusNightBolt/BlackjackTrainer" target="_blank" rel="noopener">Repository →</a>
+        <div class="card-preview"><img src="assets/previews/blackjack.png" alt="Blackjack Trainer preview" loading="lazy" /></div>
+        <div class="card-body">
+          <div class="card-top">
+            <div class="card-icon">🃏</div>
+            <span class="card-title">Blackjack Trainer</span>
+          </div>
+          <div class="card-desc">Interactive basic-strategy and Hi-Lo card-counting trainer set at an Atlantic City high-limit table, with move-by-move coaching, count-aware bet sizing, behavioral guardrails, and full-shoe simulation.</div>
+          <div class="tech"><span>React 18</span><span>Vite 5</span><span>Tailwind CSS 3</span></div>
+          <div class="card-footer">
+            <span class="card-open"><span class="status-dot live"></span>Open app ↗</span>
+          </div>
         </div>
       </div>
 
       <div class="card" data-accent="casino">
         <a class="card-cover" href="https://zeusnightbolt.github.io/PokerTrainer/" target="_blank" rel="noopener" aria-label="Open Poker Trainer"></a>
-        <div class="card-top">
-          <div class="card-icon">♠️</div>
-          <span class="card-title">Poker Trainer</span>
-        </div>
-        <div class="card-desc">Browser-based No-Limit Texas Hold'em trainer — play against randomized bots with a live Chen-formula/pot-odds strategy coach, a Monte Carlo equity/variance tracker, and interactive range-chart and quiz tools.</div>
-        <div class="tech"><span>Vanilla JS / HTML / CSS</span><span>No build step</span></div>
-        <div class="card-footer">
-          <span class="card-open"><span class="status-dot live"></span>Open app ↗</span>
-          <a class="repo-link" href="https://github.com/ZeusNightBolt/PokerTrainer" target="_blank" rel="noopener">Repository →</a>
+        <div class="card-preview"><img src="assets/previews/poker.png" alt="Poker Trainer preview" loading="lazy" /></div>
+        <div class="card-body">
+          <div class="card-top">
+            <div class="card-icon">♠️</div>
+            <span class="card-title">Poker Trainer</span>
+          </div>
+          <div class="card-desc">Browser-based No-Limit Texas Hold'em trainer — play against randomized bots with a live Chen-formula/pot-odds strategy coach, a Monte Carlo equity/variance tracker, and interactive range-chart and quiz tools.</div>
+          <div class="tech"><span>Vanilla JS / HTML / CSS</span><span>No build step</span></div>
+          <div class="card-footer">
+            <span class="card-open"><span class="status-dot live"></span>Open app ↗</span>
+          </div>
         </div>
       </div>
 
       <div class="card" data-accent="casino">
         <a class="card-cover" href="https://zeusnightbolt.github.io/RouletteTrainer/" target="_blank" rel="noopener" aria-label="Open Roulette Trainer"></a>
-        <div class="card-top">
-          <div class="card-icon">🎡</div>
-          <span class="card-title">Roulette Trainer</span>
-        </div>
-        <div class="card-desc">Dark-theme double- and single-zero roulette simulator built to test whether wheel-quadrant "droughts" carry tradeable information — live telemetry, χ² stats, bankroll analytics, and a Fallacy Lab running 100k simulated spins.</div>
-        <div class="tech"><span>React</span><span>Vite</span><span>Crypto-secure RNG</span><span>CI-verified Monte Carlo</span></div>
-        <div class="card-footer">
-          <span class="card-open"><span class="status-dot live"></span>Open app ↗</span>
-          <a class="repo-link" href="https://github.com/ZeusNightBolt/RouletteTrainer" target="_blank" rel="noopener">Repository →</a>
+        <div class="card-preview"><img src="assets/previews/roulette.png" alt="Roulette Trainer preview" loading="lazy" /></div>
+        <div class="card-body">
+          <div class="card-top">
+            <div class="card-icon">🎡</div>
+            <span class="card-title">Roulette Trainer</span>
+          </div>
+          <div class="card-desc">Dark-theme double- and single-zero roulette simulator built to test whether wheel-quadrant "droughts" carry tradeable information — live telemetry, χ² stats, bankroll analytics, and a Fallacy Lab running 100k simulated spins.</div>
+          <div class="tech"><span>React</span><span>Vite</span><span>Crypto-secure RNG</span><span>CI-verified Monte Carlo</span></div>
+          <div class="card-footer">
+            <span class="card-open"><span class="status-dot live"></span>Open app ↗</span>
+          </div>
         </div>
       </div>
 
       <div class="card" data-accent="casino">
         <a class="card-cover" href="https://zeusnightbolt.github.io/CrapsTrainer/" target="_blank" rel="noopener" aria-label="Open Craps Trainer"></a>
-        <div class="card-top">
-          <div class="card-icon">🎲</div>
-          <span class="card-title">Craps Trainer</span>
-        </div>
-        <div class="card-desc">Mathematically verified craps trainer and simulator covering every bet on the table, with a live coach recommending the edge-minimizing next move and a Monte Carlo strategy simulator.</div>
-        <div class="tech"><span>React</span><span>Vite</span><span>Monte Carlo-verified engine</span></div>
-        <div class="card-footer">
-          <span class="card-open"><span class="status-dot live"></span>Open app ↗</span>
-          <a class="repo-link" href="https://github.com/ZeusNightBolt/CrapsTrainer" target="_blank" rel="noopener">Repository →</a>
+        <div class="card-preview"><img src="assets/previews/craps.png" alt="Craps Trainer preview" loading="lazy" /></div>
+        <div class="card-body">
+          <div class="card-top">
+            <div class="card-icon">🎲</div>
+            <span class="card-title">Craps Trainer</span>
+          </div>
+          <div class="card-desc">Mathematically verified craps trainer and simulator covering every bet on the table, with a live coach recommending the edge-minimizing next move and a Monte Carlo strategy simulator.</div>
+          <div class="tech"><span>React</span><span>Vite</span><span>Monte Carlo-verified engine</span></div>
+          <div class="card-footer">
+            <span class="card-open"><span class="status-dot live"></span>Open app ↗</span>
+          </div>
         </div>
       </div>
 
       <div class="card" data-accent="casino">
         <a class="card-cover" href="https://zeusnightbolt.github.io/BaccaratTrainer/" target="_blank" rel="noopener" aria-label="Open Baccarat Trainer"></a>
-        <div class="card-top">
-          <div class="card-icon">🐉</div>
-          <span class="card-title">Baccarat Trainer</span>
+        <div class="card-preview"><img src="assets/previews/baccarat.png" alt="Baccarat Trainer preview" loading="lazy" /></div>
+        <div class="card-body">
+          <div class="card-top">
+            <div class="card-icon">🐉</div>
+            <span class="card-title">Baccarat Trainer</span>
+          </div>
+          <div class="card-desc">Commission-free EZ Baccarat trainer with the Dragon Bonus and Sun 7 / Moon 8 side bets, a full electronic road board, and live coaching — Coach Me, Play, and Drill modes, plus a "Genie" companion for intuition-based calls.</div>
+          <div class="tech"><span>Vanilla JS (ES modules)</span><span>No framework / bundler</span><span>Playwright + Node test runner</span></div>
+          <div class="card-footer">
+            <span class="card-open"><span class="status-dot live"></span>Open app ↗</span>
+          </div>
         </div>
-        <div class="card-desc">Commission-free EZ Baccarat trainer with the Dragon Bonus and Sun 7 / Moon 8 side bets, a full electronic road board, and live coaching — Coach Me, Play, and Drill modes, plus a "Genie" companion for intuition-based calls.</div>
-        <div class="tech"><span>Vanilla JS (ES modules)</span><span>No framework / bundler</span><span>Playwright + Node test runner</span></div>
-        <div class="card-footer">
-          <span class="card-open"><span class="status-dot live"></span>Open app ↗</span>
-          <a class="repo-link" href="https://github.com/ZeusNightBolt/BaccaratTrainer" target="_blank" rel="noopener">Repository →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PASSION PROJECTS -->
+  <section class="panel" id="panel-passion">
+    <p class="panel-intro">Off-thesis builds — things made for the fun of it, not because a PM asked for them.</p>
+    <div class="grid">
+
+      <div class="card" data-accent="passion">
+        <a class="card-cover" href="https://zeusnightbolt.github.io/VibeNYC/" target="_blank" rel="noopener" aria-label="Open VibeNYC"></a>
+        <div class="card-preview"><img src="assets/previews/vibenyc.png" alt="VibeNYC dashboard preview" loading="lazy" /></div>
+        <div class="card-body">
+          <div class="card-top">
+            <div class="card-icon">🗽</div>
+            <span class="card-title">VibeNYC</span>
+          </div>
+          <div class="card-desc">Attribution-first, continuously refreshed New York City intelligence — a living feed of what's happening across the city, with every claim traceable back to its source.</div>
+          <div class="tech"><span>Python</span><span>Static HTML dashboard</span><span>GitHub Actions → Pages</span></div>
+          <div class="card-footer">
+            <span class="card-open"><span class="status-dot live"></span>Open dashboard ↗</span>
+          </div>
         </div>
       </div>
 
@@ -668,7 +770,8 @@
     var panels = {
       trader: document.getElementById("panel-trader"),
       agentic: document.getElementById("panel-agentic"),
-      casino: document.getElementById("panel-casino")
+      casino: document.getElementById("panel-casino"),
+      passion: document.getElementById("panel-passion")
     };
     tabs.forEach(function (btn) {
       btn.addEventListener("click", function () {
